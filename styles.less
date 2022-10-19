@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+@desaturated-red: hsl(0, 36%, 70%);
+@soft-red: hsl(0, 93%, 68%);
+@dark-grayish-red: hsl(0, 6%, 24%);
+@gradient-white: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+@gradient-red: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h1 {
+  padding: 2em;
+
+  img {
+    width: 100px;
+  }
+}
+
+h2 {
+  margin-top: 1.5em;
+  text-align: center;
+  font-size: 2.5em;
+  letter-spacing: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: @dark-grayish-red;
+
+  & > em {
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 300;
+    color: @desaturated-red;
+  }
+}
+
+p {
+  padding: 2rem;
+  font-size: 0.875em;
+  line-height: 1.5em;
+  text-align: center;
+  color: @desaturated-red;
+}
+
+form {
+  padding: 2rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    justify-content: flex-end;
+
+    & > img {
+      position: absolute;
+      z-index: 1;
+      margin-right: 6em;
+      display: none;
+    }
+  }
+
+  span {
+    display: none;
+    font-size: 0.75em;
+    color: @soft-red;
+    padding: 0.75em 1em;
+    font-weight: 600;
+    z-index: 1;
+  }
+
+  input {
+    padding: 1em 2em;
+    border-radius: 1.5em;
+    border: 1px solid @desaturated-red;
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px;
+
+    &::placeholder {
+      color: @desaturated-red;
+    }
+
+    &:invalid {
+      border: 2px solid @soft-red;
+    }
+  }
+
+  button {
+    position: absolute;
+    appearance: none;
+    padding: 0.75em 1.6em;
+    background-image: @gradient-red;
+    border: none;
+    border-radius: 1.5em;
+    z-index: 1;
+    cursor: pointer;
+    height: 50px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      filter: brightness(1.2);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    background-image: url('./images/bg-pattern-desktop.svg');
+    width: 100%;
+  }
+
+  main {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+  }
+
+  h1 {
+    padding: 3em 8em;
+
+    img {
+      width: 150px;
+    }
+  }
+
+  picture {
+    align-self: baseline;
+    flex-grow: 0;
+    flex-shrink: 1;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: 4em;
+    text-align: left;
+    padding: 1em 8rem 0;
+
+    em {
+      font-size: 4rem;
+    }
+  }
+
+  section {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  p {
+    font-size: 1em;
+    padding: 2em 16rem 2em 8rem;
+    text-align: left;
+  }
+
+  form {
+    padding: 2em 16rem 2em 8rem;
+
+    span {
+      font-size: 0.875em;
+      z-index: 1;
+    }
+
+    button {
+      padding: 0.75em 2.25em;
+    }
+  }
+}
